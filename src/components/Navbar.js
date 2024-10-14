@@ -10,22 +10,27 @@ const Navbar = () => {
 
   const handleLogout = async () => {
     await signOut(auth);
-    router.push('/login')
+    router.push('/login');
   };
 
   return (
-    <nav className="bg-blue-500 text-white p-4">
-      <div className="container mx-auto flex justify-between">
+    <nav className="bg-gradient-to-r from-blue-500 to-purple-600 text-white p-4">
+      <div className="container mx-auto flex justify-between items-center">
         <div>
-          <Link href="/" className="text-xl">
+          <Link href="/" className="text-xl font-bold hover:text-gray-200 transition-colors duration-200">
             Travel Planner
           </Link>
         </div>
-        <div>
-          <Link href="/add-itinerary" className="mr-4">
-            Add Itinerary
+        <div className="flex items-center">
+          <Link href="/add-itinerary">
+            <button className="bg-green-500 px-6 py-2 rounded-lg shadow hover:bg-green-600 transition-colors duration-200">
+              Add Itinerary
+            </button>
           </Link>
-          <button onClick={handleLogout} className="bg-red-500 px-4 py-2">
+          <button
+            onClick={handleLogout}
+            className="bg-red-500 px-4 py-2 ml-4 rounded hover:bg-red-600 transition-colors duration-200"
+          >
             Logout
           </button>
         </div>
